@@ -20,7 +20,8 @@ getAcall.addEventListener("click", () => {
   localStorage.setItem("time", time);
   */
   // local Storage pass by Object
-
+  
+// Creating a Object
   const User = {
     name: name,
     email: email,
@@ -37,7 +38,7 @@ getAcall.addEventListener("click", () => {
   li.className = "container";
   li.classList.add("dispaly-1");
   li.textContent = JSON.stringify(
-    User.name + " - " + User.email + " - " + User.time
+    User.name + " - " + User.email + " - " + User.phone
   );
   li.style.listStyle = "none";
   li.style.color = "#fff";
@@ -47,9 +48,24 @@ getAcall.addEventListener("click", () => {
   const delButton = document.createElement("button");
   delButton.textContent = "Delete";
   display.appendChild(delButton);
+  // adding th Delete Button
+  const editButton = document.createElement("button");
+  editButton.textContent = "Edit";
+  display.appendChild(editButton);
   // Delete Function
   delButton.addEventListener("click", () => {
     display.removeChild(li);
     display.removeChild(delButton);
+    display.removeChild(editButton);
+  });
+  // Edit Function
+  editButton.addEventListener("click", () => {
+    display.removeChild(li);
+    display.removeChild(delButton);
+    display.removeChild(editButton);
+    localStorage.removeItem(User.email);
+    document.getElementById("usernameInputTag") = User.name;
+    document.getElementById("emailInputTag") = User.email;
+    document.getElementById("phoneInputTag") = User.phone;
   });
 });
