@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap link -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    />
+    <title>Form Responship</title>
+    <style>
+      body {
+        background: url("img/form-background.jpg") center center no-repeat fixed;
+        background-size: cover;
+      }
+      .cont {
+        border: 2px solid #fff;
+        border-radius: 25px;
+        width: 75vw;
+        margin-top: 3%;
+      }
+      h1 {
+        color: #fff;
+        margin-top: 3%;
+        margin-bottom: 1%;
+      }
+      label,
+      .para {
+        color: #fff;
+      }
+      .btn {
+        margin-top: 2%;
+        width: 100vw;
+        margin-bottom: 1%;
+        background-color: #eb455f;
+        border: 1px solid #eb455f;
+      }
+      .btn:hover {
+        background-color: #963846;
+        border: 1px solid #963846;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container cont">
+      <div class="container text-center">
+        <h1 class="dispaly-1">Book A Call</h1>
+        <p class="para dispaly-3">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, fugit?
+        </p>
+      </div>
+      <div class="mb-3">
+        <label for="Name" class="form-label">Name:</label>
+        <input
+          type="text"
+          class="form-control name-js"
+          id="form"
+          placeholder="Name"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Email:</label>
+        <input
+          type="text"
+          class="form-control email-js"
+          id="form"
+          placeholder="Email"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Phone:</label>
+        <input
+          type="number"
+          class="form-control phone-js"
+          id="form"
+          placeholder="Pnone No"
+        />
+      </div>
+      <div class="row">
+        <label for="formGroupExampleInput" class="form-label"
+          >Time For Call</label
+        >
+        <div class="col">
+          <input
+            type="date"
+            class="form-control date-js"
+            aria-label="First name"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="time"
+            class="form-control time-js"
+            aria-label="Last name"
+          />
+        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary">GET A CALL</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
