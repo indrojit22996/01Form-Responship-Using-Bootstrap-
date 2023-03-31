@@ -30,15 +30,26 @@ getAcall.addEventListener("click", () => {
   };
   // console.log(User);
   // let newUser = JSON.stringify(User);
-  localStorage.setItem("User Detail", JSON.stringify(User));
+  localStorage.setItem(User.email, JSON.stringify(User));
   let display = document.querySelector(".dis");
 
   let li = document.createElement("li");
   li.className = "container";
   li.classList.add("dispaly-1");
-  li.textContent = JSON.stringify(User);
+  li.textContent = JSON.stringify(
+    User.name + " - " + User.email + " - " + User.time
+  );
   li.style.listStyle = "none";
   li.style.color = "#fff";
   li.style.fontWeight = "bold";
   display.appendChild(li);
+  // adding th Delete Button
+  const delButton = document.createElement("button");
+  delButton.textContent = "Delete";
+  display.appendChild(delButton);
+  // Delete Function
+  delButton.addEventListener("click", () => {
+    display.removeChild(li);
+    display.removeChild(delButton);
+  });
 });
