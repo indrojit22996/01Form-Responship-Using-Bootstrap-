@@ -31,7 +31,7 @@ getAcall.addEventListener("click", () => {
   };
   // console.log(User);
   // let newUser = JSON.stringify(User);
-  localStorage.setItem(User.email, JSON.stringify(User));
+  // localStorage.setItem(User.email, JSON.stringify(User));
   let display = document.querySelector(".dis");
 
   let li = document.createElement("li");
@@ -68,4 +68,13 @@ getAcall.addEventListener("click", () => {
     document.getElementById("emailInputTag") = User.email;
     document.getElementById("phoneInputTag") = User.phone;
   });
+  // network or Axios call
+  axios.post("https://crudcrud.com/api/ae15d3b718fc484185505d769e82ebb6/AppiointmentDetali",User)
+  .then((response)=>{
+    console.log(response);
+  })
+  .catch((error)=>{
+    document.body.innerHTML=document.body.innerHTML+"<h4>Something Went Wrong</h4>"
+    console.log(error);
+  })
 });
