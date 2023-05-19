@@ -24,9 +24,17 @@ function showData(User){
   display.appendChild(editButton);
     // Delete Function
     delButton.addEventListener("click", () => {
-      display.removeChild(li);
+      
+      // console.log(User._id);
+       axios.delete(`https://crudcrud.com/api/e334e9c3b5f14effa8b5f9b3eb7fc890/AppiointmentDetali/${User._id}`)
+       .then((response)=>{
+        console.log(response);
+        display.removeChild(li);
       display.removeChild(delButton);
       display.removeChild(editButton);
+       }).catch((error)=>{
+        console.log(error);
+       })
     });
     // Edit Function
     editButton.addEventListener("click", () => {
